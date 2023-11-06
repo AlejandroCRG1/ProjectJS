@@ -1,0 +1,94 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    background-color: black;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header {
+    width: 100vw;
+    text-align: center;
+    align-items: center;
+    border-bottom: 0.1px solid #787c7f;
+}
+
+span {
+    background: linear-gradient(to bottom, #1aff00, #ffffff);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 50px;
+}
+
+.square-containers {
+    margin-top: 2em;
+    width: 575px;
+    height: 575px;
+    display: flex;
+    gap: 1em;
+    flex-direction: column;
+
+}
+
+.square-lines {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    gap: 1em;
+}
+
+.squares {
+    width: 100%;
+    height: 100%;
+    border: 2px solid #787c7f;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4em;
+}
+
+.right {
+    background-color: #6ca965;
+    border: none;
+}
+
+.wrong {
+    background-color: #494949;
+    border: none;
+}
+
+.present {
+    background-color: #c8b653;
+    border: none;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    font-size: large;
+    text-align: center;
+}
+
+button {
+    width: 100%;
+    height: 2em;
+    font-size: 1.2em;
+    background-color: #494949;
+    color: white;
+    font-weight: bold;
+}
