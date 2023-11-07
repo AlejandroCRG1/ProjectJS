@@ -27,7 +27,7 @@ span {
 
 .square-containers {
     margin-top: 2em;
-    width: 575px;
+    width: auto;
     height: 575px;
     display: flex;
     gap: 1em;
@@ -36,8 +36,8 @@ span {
 }
 
 .square-lines {
-    width: 100%;
-    height: 100%;
+    width: 575px;
+    height: 1/6%;
     display: flex;
     justify-content: space-around;
     gap: 1em;
