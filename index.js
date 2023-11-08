@@ -2,17 +2,20 @@ let divContainer = document.getElementsByClassName("square-containers")[0];
 let divLines, divSquares;
 
 let input = document.getElementById("number");
+let info = document.getElementsByClassName("info-section")[0];
+info.innerHTML = "Start the game by pressing the button, you have 6 tries!"
 
-let triesCount = 0;
+let triesCount = 6;
 let startPoint = 0;
 let answer = getRandom();
 
 function createLine() {
+    triesCount--
     let userAnswer = sendAnswer()
     let arrStatus = userAnswer[0]
     let arrInput = userAnswer[1]
     let correct = true
-    if (triesCount < 6) {
+    if (triesCount >= 0) {
         console.log(arrStatus)
         divLines = document.createElement("div");
         divLines.classList.add("square-lines");
@@ -37,6 +40,7 @@ function createLine() {
         }
 
         divContainer.appendChild(divLines);
+        info.innerHTML = `You've got ${triesCount} tries left!`
 
         for (let i = 0; i < 5; i++) {
             if (arrStatus[i] != 'right') {
@@ -45,12 +49,11 @@ function createLine() {
         }
 
         if (correct) {
-            triesCount = 5
-            alert("YOU WON BRUDDA")
+            info.innerHTML = "YOU WON BRUDDA"
         }
+        
+        if (triesCount == 0 && !correct) info.innerHTML = "YOU LOST BRUDDA"
     }
-    else alert("YOU LOST BRUDDA")
-    triesCount++
 }
 
 function checkNumbers(answer, input, index) {
@@ -79,7 +82,7 @@ function sendAnswer() {
 
 function getInput() {
     let arrInput = input.value.split("");
-    input.innerHTML = ""
+    input.value = ""
     for (let i = 0; i < arrInput.length; i++) {
         arrInput[i] = parseInt(arrInput[i])
     }
