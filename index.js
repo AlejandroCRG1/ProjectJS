@@ -16,10 +16,8 @@ function createLine() {
     let arrInput = userAnswer[1]
     let correct = true
     if (triesCount >= 0) {
-        console.log(arrStatus)
         divLines = document.createElement("div");
         divLines.classList.add("square-lines");
-        console.log(divLines);
 
         for (let i = 0; i < 5; i++) {
             divSquares = document.createElement("div");
@@ -101,7 +99,6 @@ function sendAnswer() {
         let status = checkNumbers(answer, arrInput[i], i)
         arrStatus.push(status);
     }
-    console.log(arrStatus)
     return [arrStatus, arrInput]
 }
 
