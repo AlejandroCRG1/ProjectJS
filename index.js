@@ -49,11 +49,36 @@ function createLine() {
         }
 
         if (correct) {
-            info.innerHTML = "YOU WON BRUDDA"
+            info.innerHTML = "YOU WON BRUDDA, NICE PLAY, THESE ARE YOUR TRIES:"
+            displayEnd(correct)
         }
         
-        if (triesCount == 0 && !correct) info.innerHTML = "YOU LOST BRUDDA"
+        if (triesCount == 0 && !correct) {
+            info.innerHTML = "YOU LOST BRUDDA"
+            displayEnd(correct)
+        }
     }
+}
+
+function displayEnd(bool) {
+    input.style.display = "none"
+    let button = document.getElementsByClassName("button")[0]
+    let label = document.getElementsByClassName("label")[0]
+    button.style.display = "none"
+    label.innerHTML = "The number was:"
+    divCodigo = document.getElementsByClassName("codigo")[0]
+    divLine = document.createElement("div");
+    divLine.classList.add("square-lines");
+    for (let i = 0; i < 5; i++) {
+        divSquare = document.createElement("div");
+        divSquare.classList.add("squares");
+        divSquare.innerHTML = answer[i]
+        if (bool) divSquare.classList.add("right")
+        else divSquare.classList.add("wrong")
+        divLine.appendChild(divSquare);
+    }
+    divCodigo.appendChild(divLine)
+    divCodigo.style.display = "flex"
 }
 
 function checkNumbers(answer, input, index) {
